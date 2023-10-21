@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Sign In Page</title>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
@@ -14,6 +15,36 @@
         <a class="calc" href="calc.html">CALORIE CALCULATOR</a>
         
     </nav> 
+    <section id="signupheader">
+        <h1>Sign Up</h1>
+    </section>
+    <div class="form-container">
+        <form id="signup-form">
+            <!-- Sign Up Form -->
+            <div class="form-group">
+                <label class="form-label" for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="button">Sign Up</button>
+        </form>
+
+        <hr>
+        <div class="loginforward">
+            <p>already have an account?</p>
+            <a href="login.html">Log in Here!</a>
+        </div>
     
 </body>
 </html>

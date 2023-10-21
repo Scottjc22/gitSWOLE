@@ -5,101 +5,52 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 
+    <script src= "main.js" ></script>
 </head>
 <body>
     <header>
-        <nav id="navbar">
-            <a class="course" href="course.html">TRACKER</a>
-            <a class="about" href="course.html">ABOUT</a>
-            <a class="contact" href="course.html">CONTACT</a>
-            <a class="calc" href="calc.html">CALORIE CALCULATOR</a>
-        </nav>  
-    </header>
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mx-auto">
-            <div class="card card-body text-center mt-5">
-              <h1 class="heading display-5 pb-3">Calorie Calculator App</h1>
-              <form id="calorie-form">
-  
-                <div class="form-group row">
-                  <label for="age" class="col-sm-2 col-form-label">Age</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" id="age" placeholder="Ages 15-80">
-                  </div>
-                </div>
-  
-                <fieldset class="form-group">
-                  <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-                    <div class="col-sm-10" id="form-radio">
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
-                        <label class="custom-control-label" for="male">Male</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="female">Female</label>
-                      </div>  
-                    </div>
-                  </div> 
-                </fieldset> 
-  
-                <div class="form-group row">
-                  <label for="weight" class="col-sm-2 col-form-label">Weight</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" id="weight" placeholder="In kilograms">
-                  </div>
-                </div>
-  
-                <div class="form-group row">
-                  <label for="height" class="col-sm-2 col-form-label">Height</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" id="height" placeholder="In centimeters">
-                  </div>
-                </div>
-                
-                <div class="form-group row">
-                  <legend class="col-form-label col-sm-2 pt-0">Activity</legend>
-                  <select class="custom-select col-sm-10" id="list">
-                    <option selected value="1">Sedentary (little or no exercise)</option>
-                    <option value="2">Lightly active (light exercise/sports 1-3 days/week)</option>
-                    <option value="3">Moderately active (moderate exercise/sports 3-5 days/week)</option>
-                    <option value="4">Very active (hard exercise/sports 6-7 days a week)</option>
-                    <option value="5">Extra active (very hard exercise/sports & physical job or 2x training)</option>
-                  </select>
-                </div>
-  
-                <div class="form-group">
-                  <input type="submit" value="Calculate" class="btn btn-primary btn-block">
-                </div>
-  
-              </form>
-  
-              <div id="results" class="pt-4">
-                <h5>Total Calories</h5>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="total-calories" disabled>
-                  </div>
-                </div>                       
+        <div class="navbar">
+            <div class="dropdown">
+              <button class="dropbtn"><img class="swole-img" src="images/swole.png" alt="swole">
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="calc.html">Calculator</a>
+                <a href="#">About us</a>
+                <a href="#">Profile</a>
               </div>
             </div>
+            <p class="header">gitSWOLE</p>
           </div>
-        </div>
-      </div>
-  
-
-
-
-
-
-
-
-
-
-    <div class="weightgoals">
+    </header>
+    <div class="info-msg" style="text-align:center;width: 300px;margin: 0 auto";>
+        <label class="exerciseform" for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>
+        <label class="exerciseform" for="age">Age:</label>
+        <input type="text" id="age"><br>
+        <label class="exerciseform" for="weight">Weight (kg):</label>
+        <input type="text" id="weight"><br>
+        <label class="exerciseform" for="height">Height (cm):</label>
+        <input type="text" id="height"><br>
+        <label class="exerciseform" for="activity">Activity Level:</label>
+            <select id="activity">
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Lightly Active</option>
+                <option value="1.55">Moderately Active</option>
+                <option value="1.725">Very Active</option>
+                <option value="1.9">Super Active</option>
+            </select><br>
+  <button onclick="calculateCalories()">Calculate Daily Calories</button><br>
+  <p style="font-size:20px">Your estimated daily calorie intake is: <span id="result"></span> calories</p>
+</div>
+   <!-- <div class="weightgoals">
         <h1>Goals</h1>
         <button id="lose" onclick="showInfo('loseinfo')">Lose Weight</button>
         <button id="maintain" onclick="showInfo('maintaininfo')">Maintain Weight</button>
@@ -123,11 +74,7 @@
             <p>1</p>
             <p>2</p>
         </div>
-        
-        
-        
 
-    </div>
     <script>
         function showInfo(infoId) {
             var infoElements = document.querySelectorAll('.info');
@@ -150,10 +97,10 @@
             document.getElementById('button' + infoId.slice(-1)).disabled = true;
         }
         
-    </script>
+    </script>-->
 
 
 
-    <sript src= "main.js" >
+    <sript src= "main.js" ></sript>
 </body>
 </html>
