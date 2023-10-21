@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js"></script>
+    <script src="server.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="dropdown">
+              <button class="dropbtn"><img class="swole-img" src="images/swole.png" alt="swole">
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Home</a>
+                <a href="#">Tracker</a>
+                <a href="#">Calculator</a>
+                <a href="#">About us</a>
+                <a href="#">Profile</a>
+              </div>
+            </div>
+            <p class="header">gitSWOLE</p>
+          </div>
+    
+    
+    
+    
+    
+    <div class="log-form">
+        <label for="exercise">Exercise:</label>
+        <input type="text" id="exercise"><br>
+        <label for="sets">Sets:</label>
+        <select id="sets">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+        <label for="reps">Reps:</label>
+        <input type="text" id="reps"><br>
+        <label for="weight">Weight (kg):</label>
+        <input type="text" id="weight"><br>
+        <button onclick="logExercise()">Log Exercise</button>
+    </div>
+    
+    <div class="exercise-log">
+        <h2>Exercise Log</h2>
+        <ul id="logList"></ul>
+    </div>
+
+    
+</body>
+</html>
+
